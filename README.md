@@ -23,8 +23,7 @@ Exemplo de requisição: GET /books?page=1&limit=10 Resposta 200: [ { "id": 1, "
 
 🔹 GET /users Lista todos os usuários.
 
-🔹 POST /users Cria usuário. { "fullName": "João Silva", "email": "joao@email.com
-" }
+🔹 POST /users Cria usuário. { "fullName": "João Silva", "email": "joao@email.com" }
 
 🔹 GET /users/{id} Retorna usuário específico.
 
@@ -41,8 +40,7 @@ Exemplo de requisição: GET /books?page=1&limit=10 Resposta 200: [ { "id": 1, "
 Guia de Instalação e Configuração
 Requisitos Node.js (>= 18) npm ou yarn Git
 
-🚀 Instalação git clone https://github.com/GabrielLosekann-desenvolvedor/Biblioteca-API/blob/main/openapi.yaml
- cd biblioteca-api npm install
+🚀 Instalação git clone https://github.com/GabrielLosekann-desenvolvedor/Biblioteca-API/blob/main/openapi.yaml cd biblioteca-api npm install
 
 ▶️ Execução npm start
 
@@ -53,22 +51,33 @@ Requisitos Node.js (>= 18) npm ou yarn Git
 Guia de Uso para Desenvolvedores
 🔁 Fluxo completo de uso Criar usuário Listar livros Criar empréstimo Devolver livro
 
-📌 JavaScript (Fetch) // Criar usuário await fetch('/users', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ fullName: 'João', email: 'joao@email.com
-' }) })
+📌 JavaScript (Fetch)
+// Criar usuário
+await fetch('/users', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ fullName: 'João', email: 'joao@email.com' })
+})
 
-// Listar livros const books = await fetch('/books').then(r => r.json())
+// Listar livros
+const books = await fetch('/books').then(r => r.json())
 
-// Criar empréstimo await fetch('/loans', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ userId: 1, bookId: 2, dueDate: '2026-05-01' }) })
+// Criar empréstimo
+await fetch('/loans', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ userId: 1, bookId: 2, dueDate: '2026-05-01' })
+})
 
-🐍 Python (Requests) import requests
+🐍 Python (Requests)
+import requests
 
 Listar livros
-res = requests.get('http://localhost:3000/api/books
-') print(res.json())
+res = requests.get('http://localhost:3000/api/books')
+print(res.json())
 
 Criar empréstimo
-requests.post('http://localhost:3000/api/loans
-', json={ "userId": 1, "bookId": 2, "dueDate": "2026-05-01" })
+requests.post('http://localhost:3000/api/loans', json={ "userId": 1, "bookId": 2, "dueDate": "2026-05-01" })
 
 📌 Casos de Uso Sistema de biblioteca escolar Plataforma educacional Controle de empréstimos corporativos Integração com apps mobile
 
