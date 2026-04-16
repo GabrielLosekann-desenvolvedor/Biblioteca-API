@@ -2,7 +2,7 @@ openapi: 3.0.3
 info:
   title: Biblioteca API
   description: API REST para gerenciamento de livros, usuários e empréstimos.
-  version: 1.0.0
+  version: 2.0.0
 
 servers:
   - url: http://localhost:3000/api
@@ -294,16 +294,16 @@ components:
       properties:
         id:
           type: integer
-        name:
+        fullName:
           type: string
         email:
           type: string
 
     UserInput:
       type: object
-      required: [name, email]
+      required: [fullName, email]
       properties:
-        name:
+        fullName:
           type: string
         email:
           type: string
@@ -334,5 +334,3 @@ components:
         dueDate:
           type: string
           format: date
-
-
